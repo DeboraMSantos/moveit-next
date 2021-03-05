@@ -2,11 +2,13 @@ import { useContext } from 'react';
 import { ChallengesContext } from '../contexts/ChallengesContext';
 import { CountdownContext } from '../contexts/CountdownContext';
 import styles from '../styles/components/ChallengeBox.module.css';
+import Lottie from 'react-lottie';
+import loadingAnimation from '../animation/clock.json';
 
 export function ChallengeBox() {
 
   const { activeChallenge, resetChallenge, completeChallenge } = useContext(ChallengesContext);
-  const { resetCountdown } = useContext(CountdownContext);
+  const { resetCountdown, isActive, percentTime } = useContext(CountdownContext);
 
   function handleChallengeCompleted() {
     completeChallenge();
@@ -48,15 +50,33 @@ export function ChallengeBox() {
             </button>
           </footer>
         </div >
-      ) : (
+      ) : <>{isActive ? (
+
+        <div className={styles.challengeNotActive}>
+          <strong>O ciclo foi iniciado e no fim você receberá um novo desafio!</strong>
+
+          <Lottie
+            options={{
+              loop: true,
+              autoplay: true,
+              animationData: loadingAnimation,
+            }}
+            width={200}
+          />
+          <div className={styles.loadingNumber} style={{ width: `100%` }}>{percentTime}% Completo</div>
+
+        </div>
+
+      )
+        : (
 
           <div className={styles.challengeNotActive}>
-            <strong>Finalize um ciclo para receber um novo desafio.</strong>
+            <strong>Inicie um ciclo e ao finalizar você receberá um novo desafio.</strong>
             <p><img src="icons/level-up.svg" alt="Level Up" /></p>
           Avance de level completando desafios.
           </div>
         )
-      }
+      }</>}
     </div >
   );
 }

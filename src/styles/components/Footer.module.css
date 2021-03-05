@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container footer a {
+  color: var(--blue);
+}
+
+@media (max-width: 600px) {
+  .container footer {
+    margin-top: 2.5rem;
+    font-size: 0.9rem;
+  }
+}

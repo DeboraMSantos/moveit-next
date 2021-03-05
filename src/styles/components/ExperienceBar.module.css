@@ -9,21 +9,40 @@
 
 .experienceBar > div {
   flex: 1;
-  height: 4px;
-  border-radius: 4px;
+  height: 15px;
+  border-radius: 15px;
   background: var(--gray-line);
   margin: 0 1.5rem;
   position: relative;
 }
 
 .experienceBar > div > div {
-  height: 4px;
-  border-radius: 4px;
+  height: 15px;
+  border-radius: 15px;
   background: var(--green);
 }
 
 span.currentExperience {
   position: absolute;
-  top: 12px;
+  top: 30px;
   transform: translateX(-50%);
+  background: var(--blue);
+  padding: 1.5em;
+  height: 3rem;
+  border-radius: 15rem 15rem 15rem 15rem;
+  color: #fff;
+  width: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+span.currentExperience::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  border-bottom: 20px solid var(--blue);
+  margin-top: -3.2rem;
 }

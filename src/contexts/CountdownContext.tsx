@@ -6,6 +6,7 @@ interface CountdownProviderData {
   seconds: number;
   hasFinished: boolean;
   isActive: boolean;
+  percentTime: number;
   startCountdown: () => void;
   resetCountdown: () => void;
 }
@@ -21,10 +22,11 @@ export const CountdownContext = createContext({} as CountdownProviderData);
 
 export function CountdownProvider({ children }: CountdownProviderProps) {
   const { startNewChallenge } = useContext(ChallengesContext);
-
-  const [time, setTime] = useState(25 * 60);
+  const timeInMinutes = 0.1;
+  const [time, setTime] = useState(timeInMinutes * 60);
   const [isActive, setIsActive] = useState(false);
   const [hasFinished, setHasFinished] = useState(false);
+  let percentTime = Math.floor(100 + ((time / (timeInMinutes * 60) * (-100))))
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
@@ -36,7 +38,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
   function resetCountdown() {
     clearTimeout(countdownTimeout);
     setIsActive(false);
-    setTime(0.1 * 60);
+    setTime(timeInMinutes * 60);
     setHasFinished(false);
   }
   useEffect(() => {
@@ -58,6 +60,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
       seconds,
       hasFinished,
       isActive,
+      percentTime,
       startCountdown,
       resetCountdown
     }}>

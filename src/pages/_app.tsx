@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../styles/global.css';
+import { Provider } from 'next-auth/client'
 
 function MyApp({ Component, pageProps }) {
+
   return (
-    <Component {...pageProps} />
+    <Provider session={pageProps.session}>
+      <Component {...pageProps} />
+    </Provider>
   );
 }
 

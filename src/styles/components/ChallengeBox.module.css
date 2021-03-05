@@ -89,7 +89,7 @@
   border: 0;
   border-radius: 5px;
 
-  color: var(--white);
+  color: #fff;
 
   font-size: 1rem;
   font-weight: 600;
@@ -107,4 +107,19 @@
 
 .challengeActive footer button:hover {
   filter: brightness(0.9);
+}
+
+.loadingNumber {
+  position: relative;
+  margin-top: 1rem;
+  background: var(--blue);
+  padding: 1.5em;
+  height: 3rem;
+  min-width: 15rem;
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

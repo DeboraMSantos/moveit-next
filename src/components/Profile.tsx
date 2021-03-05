@@ -1,15 +1,17 @@
-import { useContext } from 'react';
-import { ChallengesContext } from '../contexts/ChallengesContext';
-
-import styles from '../styles/components/Profile.module.css';
+import { useContext } from "react";
+import { ChallengesContext } from "../contexts/ChallengesContext";
+import { ProfileContext } from "../contexts/ProfileContext";
+import styles from "../styles/components/Profile.module.css";
 
 export function Profile() {
   const { level } = useContext(ChallengesContext);
+  const { name, avatarUrl } = useContext(ProfileContext);
+
   return (
     <div className={styles.profileContainer}>
-      <img src={"https://media-exp1.licdn.com/dms/image/C4E03AQH_yxW1cJ3uPQ/profile-displayphoto-shrink_100_100/0/1590176780532?e=1620259200&v=beta&t=3bP8u8Phbf6ZDgaeQKP6hPcxPM8o3IQfXFcZAvOAeI4"} alt="Débora Moura" />
+      <img src={avatarUrl} alt={`Foto de Perfil ${name}`} />
       <div>
-        <strong>Débora Moura dos Santos</strong>
+        <strong>{name} </strong>
         <p>
           <img src="icons/level.svg" alt={""} />
           Level {level}
