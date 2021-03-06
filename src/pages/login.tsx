@@ -20,7 +20,8 @@ export default function Login() {
           <div className={styles.container}>
             <img src="symbol.svg" alt="Logo stripes" />
             <div>
-              <img src="logo-full-white.svg" alt="Full logo" />
+
+              <img className={styles.logo} src="logo-full-white.svg" alt="Full logo" />
               <strong>Bem-vindo</strong>
               <p>Faça login para continuar</p>
               <button type="button" onClick={() => signIn("google")}>
