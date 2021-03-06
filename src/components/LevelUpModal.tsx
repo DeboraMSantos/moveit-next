@@ -29,21 +29,27 @@ export function LevelUpModal() {
       </div>
 
       <div className={styles.container}>
-        <header>{level}</header>
-        <strong>Parabéns</strong>
-        <p>Você alcançou um novo level.</p>
-        <button type="button" onClick={handleCloseLevelUpModal}>
-          <img src="/icons/close.svg" alt="Fechar Modal" />
-        </button>
-      </div>
-      {/* <div className={styles.container}>
-        <strong>Desafios Completados</strong>
-        <p>Você alcançou um novo level.</p>
+        <section>
+          <div>
+            <header>{level}</header>
+            <strong>Parabéns</strong>
+            <p>Você alcançou um novo nível.</p>
+          </div>
 
-        <button type="button" onClick={closeLevelUpModal}>
-          <img src="/icons/close.svg" alt="Fechar Modal" />
-        </button>
-      </div> */}
+          <div className={styles.challengesCompleted}>
+            <strong>DESAFIOS</strong>
+            <p><span>3</span>  completados</p>
+            <hr />
+            <strong> EXPERIÊNCIA</strong>
+            <p><span>154000</span>   xp</p>
+            <hr />
+            <img className={styles.logo} src="logo-purple.svg" alt="Full logo" />
+          </div>
+          <button type="button" onClick={closeLevelUpModal}>
+            <img src="/icons/close.svg" alt="Fechar Modal" />
+          </button>
+        </section>
+      </div>
     </div>
   );
 }

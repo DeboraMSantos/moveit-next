@@ -14,17 +14,14 @@ interface ThemeProviderProps {
 export const ThemeContext = createContext({} as ThemeContextData);
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
-
-    Cookies.set('theme', 'dark');
     const chooseTheme = Cookies.get('theme');
-    setTheme(chooseTheme || 'dark');
+    setTheme(chooseTheme || 'light');
   }, []);
 
   useEffect(() => {
-    Cookies.set('theme', 'dark');
     Cookies.set('theme', theme);
   }, [theme]);
 

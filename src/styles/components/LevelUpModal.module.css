@@ -9,12 +9,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .container {
   background: var(--white);
   width: 100%;
-  max-width: 400px;
+  max-width: 900px;
   padding: 2rem 3rem;
   border-radius: 5px;
 
@@ -37,7 +38,7 @@
 }
 
 .container p {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: var(--text);
   margin-top: 0.25rem;
 }
@@ -56,4 +57,50 @@
   height: 100%;
   pointer-events: none;
   position: absolute;
+  z-index: 99;
+}
+.challengesCompleted {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  flex-direction: column;
+}
+.challengesCompleted hr {
+  margin: 1.3rem 0;
+  border: 1px solid #dcdde0;
+}
+.challengesCompleted strong {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: left;
+  color: var(--title);
+  opacity: 0.5;
+  font-family: Inter;
+  line-height: 2rem;
+}
+.challengesCompleted p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-align: left;
+  color: var(--text);
+}
+.challengesCompleted span {
+  color: var(--blue);
+}
+.logo {
+  margin: 0.5rem 2rem;
+}
+.container section {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6.25rem;
+  align-content: center;
+}
+@media (max-width: 1100px) {
+  .container section {
+    grid-template-columns: 1fr;
+  }
 }

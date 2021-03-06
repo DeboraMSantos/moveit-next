@@ -1,6 +1,6 @@
-import styles from '../styles/components/LeaderboardUser.module.css';
+import styles from '../styles/components/LeaderboardUsers.module.css';
 
-interface LeaderboardUserProps {
+interface LeaderboardUsersProps {
   user: UserProps
   position: number
 }
@@ -14,7 +14,7 @@ export type UserProps = {
   challengesCompleted: number
   photo: string
 }
-export const LeaderboardUser = ({ user, position }: LeaderboardUserProps) => {
+export const LeaderboardUsers = ({ user, position }: LeaderboardUsersProps) => {
   return (
     <div className={styles.container}>
 
