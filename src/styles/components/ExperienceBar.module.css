@@ -27,11 +27,10 @@ span.currentExperience {
   top: 30px;
   transform: translateX(-50%);
   background: var(--blue);
-  padding: 1.5em;
   height: 3rem;
   border-radius: 15rem 15rem 15rem 15rem;
   color: #fff;
-  width: 6rem;
+  width: 5.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,4 +44,25 @@ span.currentExperience::before {
   border-left: 20px solid transparent;
   border-bottom: 20px solid var(--blue);
   margin-top: -3.2rem;
+}
+
+@media (max-width: 1100px) {
+  .experienceBar > div {
+    top: 30px;
+  }
+  .experienceBar span {
+    margin-top: 4rem;
+  }
+
+  span.currentExperience {
+    height: 2.5rem;
+    width: 5rem;
+    font-size: 0.9rem;
+    margin-top: 0;
+  }
+  span.currentExperience::before {
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid var(--blue);
+  }
 }

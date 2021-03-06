@@ -1,20 +1,30 @@
 .container {
+  background: var(--blue);
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  text-align: center;
   align-items: center;
-
-  background-color: var(--blue);
+  justify-items: center;
+  overflow: hidden;
 }
-
-.container > div {
+.container > img {
   position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+.container > div {
+  grid-row-start: 2;
+  grid-column-start: 3;
+
   display: flex;
   flex-direction: column;
-  line-height: 7.5em;
+
+  line-height: 5.5em;
   height: 50vh;
-  right: 18rem;
+  margin: 1rem;
 }
 
 .container div strong {
@@ -25,7 +35,6 @@
 }
 
 .container div p {
-  display: flex;
   color: #b3b9ff;
   font-weight: 500;
   font-size: 1.5rem;
@@ -44,6 +53,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   transition: ease 0.2s;
+  z-index: 100;
 }
 
 .container div button:last-child {
@@ -57,4 +67,39 @@
 
 .container div button:last-child:hover {
   background: #eb4132;
+}
+
+@media (max-width: 1200px) {
+  .container > div {
+    grid-row-start: 2;
+    grid-column-start: 2;
+
+    display: flex;
+    flex-direction: column;
+    line-height: 5.5em;
+    height: 50vh;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 400px) {
+  .container > div {
+    margin: 0.1rem;
+  }
+
+  .logo {
+    width: 250px;
+  }
+
+  .container div strong {
+    font-size: 1.2rem;
+  }
+
+  .container div p {
+    font-size: 1.2rem;
+  }
+  .container div button img {
+    padding-right: 1rem;
+    height: 30%;
+  }
 }

@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 7rem;
+  width: 6rem;
   background: var(--blue);
 }
 
@@ -29,47 +29,64 @@
   cursor: pointer;
   font-size: 2.5rem;
 }
-
+.container .icon {
+  height: 5rem;
+}
+.container div p {
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
 .container div svg:hover,
 .container div svg:first-child {
   color: #fff;
   cursor: pointer;
 }
-
-.icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.container div:hover {
+.container .icon:hover {
+  color: var(--green);
+  background: var(--green);
   border-left: 5px solid var(--green);
 }
-.container div svg:hover {
-  color: var(--green);
+.container .icon:last-child:hover {
+  background: var(--red);
+  border-left: 5px solid var(--red);
+}
+.container .icon.iconGithub {
+  display: none;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1100px) {
   .container {
     flex-direction: row;
 
-    padding: 2rem;
     left: unset;
     right: 0;
     top: 0;
 
     width: 100%;
-    height: 3rem;
+    height: 5rem;
   }
 
-  .container div:last-child {
-    margin-right: 1.2rem;
+  .container .icon:hover {
+    border-bottom: 5px solid var(--green);
+    border-left: 0;
   }
+  .container .icon:last-child:hover {
+    border-bottom: 5px solid var(--red);
+    border-left: 0;
+  }
+  .container .icon.iconGithub {
+    display: flex;
+  }
+  .container div p {
+    font-weight: 600;
+    cursor: pointer;
+    display: none;
+  }
+}
 
+@media (max-width: 700px) {
   .container svg {
-    width: 3rem;
-  }
-
-  .icon {
-    flex-direction: row;
+    font-size: 2rem;
   }
 }

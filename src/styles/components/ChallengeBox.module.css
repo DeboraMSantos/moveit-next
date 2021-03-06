@@ -1,5 +1,5 @@
 .challengeBoxContainer {
-  height: 100%;
+  height: 90%;
 
   background: var(--white);
   border-radius: 5px;
@@ -11,6 +11,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  margin-top: 3.8rem;
 }
 
 .challengeNotActive {
@@ -122,4 +124,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 1100px) {
+  .challengeActive main {
+    padding: 1rem;
+  }
+  .challengeActive main img {
+    max-height: 4rem;
+  }
+  .challengeActive footer button {
+    margin-top: 0.2rem;
+  }
 }

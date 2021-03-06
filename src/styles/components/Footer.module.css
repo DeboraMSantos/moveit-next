@@ -7,9 +7,9 @@
   color: var(--blue);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1100px) {
   .container footer {
-    margin-top: 2.5rem;
+    margin: 2.5rem;
     font-size: 0.9rem;
   }
 }
