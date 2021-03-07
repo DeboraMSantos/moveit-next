@@ -45,11 +45,9 @@
 .container .icon:hover {
   color: var(--green);
   background: var(--green);
-  border-left: 5px solid var(--green);
 }
 .container .icon:last-child:hover {
   background: var(--red);
-  border-left: 5px solid var(--red);
 }
 .container .icon.iconGithub {
   display: none;
@@ -67,14 +65,6 @@
     height: 5rem;
   }
 
-  .container .icon:hover {
-    border-bottom: 5px solid var(--green);
-    border-left: 0;
-  }
-  .container .icon:last-child:hover {
-    border-bottom: 5px solid var(--red);
-    border-left: 0;
-  }
   .container .icon.iconGithub {
     display: flex;
   }

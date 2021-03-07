@@ -1,0 +1,93 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.positionWrapper {
+  padding: 35px;
+  height: 100%;
+  width: 5rem;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background);
+  transition: background-color 0.3s;
+  margin-right: 4px;
+}
+
+.positionWrapper > h1 {
+  font-size: 22px;
+}
+
+.infoWrapper {
+  padding: 1rem;
+  background: var(--background);
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.profileWrapper {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.profileWrapper > img {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+  background: var(--gray-line);
+}
+.profileWrapper div {
+  display: flex;
+  flex-direction: column;
+}
+.profileWrapper > strong {
+  color: var(--title);
+  transition: color 0.3s;
+  font-size: 1.25rem;
+}
+.profileWrapper > p,
+.profileWrapper img {
+  margin-right: 6px;
+}
+
+.experienceWrapper {
+  width: 38%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+.experienceWrapper p:first-child {
+  /* margin-left: 6.5rem; */
+}
+.experienceWrapper p {
+  color: var(--text);
+  transition: color 0.3s;
+}
+.experienceWrapper strong {
+  color: var(--blue);
+  transition: color 0.3s;
+}
+
+@media (max-width: 1080px) {
+  .positionWrapper {
+    padding: 32px;
+  }
+}
+@media (max-width: 768px) {
+  .positionWrapper {
+    padding: 29px;
+  }
+}
