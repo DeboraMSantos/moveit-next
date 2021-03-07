@@ -16,7 +16,7 @@ export function Sidebar() {
     toggleTheme();
   }
   return (
-    <nav className={styles.container}>
+    <aside className={styles.container}>
       <div>
         <img src="favicon.png" alt="Move.it" />
       </div>
@@ -60,7 +60,7 @@ export function Sidebar() {
           <p>Sair</p>
         </div>
       </div>
-    </nav>
+    </aside>
   )
 }
 
