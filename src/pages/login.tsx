@@ -5,6 +5,7 @@ import styles from "../styles/pages/Login.module.css";
 import { signIn, useSession } from "next-auth/client";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import SEO from "../components/SEO";
 
 export default function Login() {
   const [session, loading] = useSession();
@@ -14,9 +15,7 @@ export default function Login() {
     <>
       {!session && (
         <>
-          <Head>
-            <title>Login | move.it</title>
-          </Head>
+          <SEO title="Login" />
           <div className={styles.container}>
             <img src="symbol.svg" alt="Logo stripes" />
             <div>

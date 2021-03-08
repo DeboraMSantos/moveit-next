@@ -24,7 +24,7 @@ export const LeaderboardCard = ({ user, position }: LeaderboardCardProps) => {
       <p>{position + 1}</p>
 
       <div className={styles.avatar}>
-        <img src="https://media-exp1.licdn.com/dms/image/C4E03AQH_yxW1cJ3uPQ/profile-displayphoto-shrink_200_200/0/1590176780532?e=1620864000&v=beta&t=-Xy6Da49rwOGiCzH6ChtNCfZ6AxcNnZUpGrYxrLv5lE" />
+        <img src={user.photo} />
         <div>
           <strong>{user.name}</strong>
           <p>

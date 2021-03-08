@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-import Head from 'next/head';
 import { GetServerSideProps } from 'next';
-
+import api from '../services/api';
 import { ChallengesProvider } from '../contexts/ChallengesContext';
 import { CountdownProvider } from '../contexts/CountdownContext';
 import { ThemeProvider } from '../contexts/ThemeContext';
@@ -17,11 +16,13 @@ import { GitHub } from '../components/GitHub';
 import { Footer } from '../components/Footer';
 
 import styles from '../styles/pages/Home.module.css';
-import { useSession } from 'next-auth/client';
+import { session, useSession } from 'next-auth/client';
 import { useRouter } from 'next/router';
+import SEO from '../components/SEO';
 
 
 interface HomeProps {
+  email: string;
   level: number;
   currentExperience: number;
   challengesCompleted: number;
@@ -30,6 +31,7 @@ interface HomeProps {
 export default function Home(props: HomeProps) {
   const [session, loading] = useSession();
   const router = useRouter();
+
   return (
     <>
       {!session &&
@@ -40,10 +42,9 @@ export default function Home(props: HomeProps) {
         }, [])}
       {session && (
         <>
-          <Head>
-            <title> Início | Move.it</title>
-            <meta name="viewport" content="minimum-scale=1, initial-scale=1,width=device-width " />
-          </Head>
+
+          <SEO title="Início" />
+
           <ChallengesProvider
             level={props.level}
             currentExperience={props.currentExperience}
@@ -63,6 +64,7 @@ export default function Home(props: HomeProps) {
                     <ProfileProvider
                       avatarUrl={session.user.image}
                       name={session.user.name}
+                      email={session.user.email}
                     >
                       <Profile />
                     </ProfileProvider>
@@ -82,18 +84,16 @@ export default function Home(props: HomeProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+//export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
-  //chamada API
-  const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
+  // console.log("ctex", ctx);
+  // const email = 'debyiinha@gmail.com';
+  // const { data } = await api.get(`/api/user/${email}`);
 
-  const user = {
-    level: Number(level),
-    currentExperience: Number(currentExperience),
-    challengesCompleted: Number(challengesCompleted)
-  }
 
-  return {
-    props: user //vai ser acessivel lá em cima em Home(props)
-  }
-}
+  // return {
+  //   props: {
+  //     user: data.users ? data.users : null
+  //   },
+  // };
+//}

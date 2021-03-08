@@ -4,23 +4,24 @@ import Cookies from "js-cookie";
 interface ProfileContextData {
   avatarUrl: string;
   name: string;
+  email: string;
 }
 
 export const ProfileContext = createContext({} as ProfileContextData);
 
 export function ProfileProvider({ children, ...userData }) {
-  const name = userData.name ?? "Usuário";
-  const avatarUrl =
-    userData.avatarUrl ??
-    "https://cdn0.iconfinder.com/data/icons/online-shop-equitment-gliph/32/line-2_on_going_logo-02-512.png";
+  const name = userData.name;
+  const avatarUrl = userData.avatarUrl;
+  const email = userData.email;
 
   useEffect(() => {
     Cookies.set("cookieAvatarUrl", avatarUrl);
     Cookies.set("cookieName", name);
+    Cookies.set("cookieEmail", email);
   }, []);
 
   return (
-    <ProfileContext.Provider value={{ name, avatarUrl }}>
+    <ProfileContext.Provider value={{ name, avatarUrl, email }}>
       {children}
     </ProfileContext.Provider>
   );

@@ -1,7 +1,11 @@
-import { createContext, ReactNode, useEffect, useState } from 'react';
-import Cookies from 'js-cookie';
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+// import Cookies from 'js-cookie';
 import challenges from '../../challenges.json';
 import { LevelUpModal } from '../components/LevelUpModal';
+import { ProfileContext } from './ProfileContext';
+import api from '../services/api';
+import { useSession } from 'next-auth/client';
+
 
 interface Challenge {
   type: 'body' | 'eye';
@@ -18,7 +22,7 @@ interface ChallengesProviderProps {
 }
 
 interface ChallengesProviderData {
-
+  email: string;
   level: number;
   currentExperience: number;
   challengesCompleted: number;
@@ -38,7 +42,7 @@ export function ChallengesProvider({
   children,
   ...rest
 }: ChallengesProviderProps) {
-
+  const [session] = useSession();
   const [level, setLevel] = useState(rest.level ?? 1);
   const [currentExperience, setCurrentExperience] = useState(rest.currentExperience ?? 0);
   const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0);
@@ -48,17 +52,53 @@ export function ChallengesProvider({
 
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
 
+  const [loading, setLoading] = useState(true)
+
+
   useEffect(() => {
     Notification.requestPermission();
+
   }, []);
 
-  useEffect(() => {
-    Cookies.set('level', String(level));
-    Cookies.set('currentExperience', String(currentExperience));
-    Cookies.set('challengesCompleted', String(challengesCompleted));
 
-    Notification.requestPermission();
-  }, [level, currentExperience, challengesCompleted]);
+  // useEffect(() => {
+
+  //   api.post(`/api/user`, {
+  //     level: level || 1,
+  //     email: session.user.email,
+  //     totalExperience: currentExperience,
+  //     challengesCompleted: challengesCompleted,
+  //     photo: session.user.image,
+  //     name: session.user.name
+  //   })
+
+  // }, [level, currentExperience, challengesCompleted,])
+  useEffect(() => {
+    if (loading) {
+      api
+        .get(`/api/user/${session.user.email}`)
+        .then((response) => {
+          setChallengesCompleted(response.data.user.challengesCompleted || 0)
+          setCurrentExperience(response.data.user.totalExperience || 0)
+          setLevel(response.data.user.level || 1)
+        })
+        .catch((e) => {
+          console.log('Erro ao buscar dados do user', e)
+        })
+        .finally(() => {
+          setLoading(false)
+        })
+    } else {
+      api.post(`/api/user`, {
+        level: level || 1,
+        totalExperience: currentExperience,
+        email: session.user.email,
+        challengesCompleted,
+        photo: session.user.image,
+        name: session.user.name
+      })
+    }
+  }, [level, currentExperience, challengesCompleted, loading])
 
   function levelUp() {
     setLevel(level + 1);
@@ -112,6 +152,7 @@ export function ChallengesProvider({
   return (
     <ChallengesContext.Provider
       value={{
+        email: session.user.email,
         level,
         currentExperience,
         challengesCompleted,

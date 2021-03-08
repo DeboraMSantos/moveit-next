@@ -5,7 +5,7 @@ import styles from '../styles/components/LevelUpModal.module.css';
 import loadingAnimation from '../animation/confetti.json';
 
 export function LevelUpModal() {
-  const { level, closeLevelUpModal } = useContext(ChallengesContext);
+  const { level, currentExperience, challengesCompleted, closeLevelUpModal } = useContext(ChallengesContext);
   const music = new Audio('/aplausos.mp3');
   useEffect(() => {
     music.play();
@@ -38,10 +38,10 @@ export function LevelUpModal() {
 
           <div className={styles.challengesCompleted}>
             <strong>DESAFIOS</strong>
-            <p><span>3</span>  completados</p>
+            <p><span>{challengesCompleted}</span>  completados</p>
             <hr />
             <strong> EXPERIÊNCIA</strong>
-            <p><span>154000</span>   xp</p>
+            <p><span>{currentExperience}</span>   xp</p>
             <hr />
             <img className={styles.logo} src="logo-purple.svg" alt="Full logo" />
           </div>
