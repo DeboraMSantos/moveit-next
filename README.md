@@ -74,13 +74,6 @@ Design feito por [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/
 
 - `dev`: Executa a aplicação em `localhost:3000`
 - `build`: Cria a Build do projeto
-- `start`: Inicia um servidor simples com o código de produção
-- `lint`: Executa o **Linter** em todos os componentes e páginas
-- `test`: Executa **Jest** para testar todos os componentes e páginas
-- `test:watch`: Executa **Jest** em watch mode
-- `storybook`: Executa **Storybook** em `localhost:6006`
-- `build-storybook`: Cria uma build do storybook
-- `generate`: Cria automaticamente um componente
 
 ## 🚀 Como rodar este projeto
 
