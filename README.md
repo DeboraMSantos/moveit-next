@@ -1,5 +1,5 @@
 <p align="center">
-  <img  alt="MoveIt Logo" title="MoveIt" src=".github/readme/logo-full.svg" />
+  <img  alt="MoveIt Logo" title="MoveIt" src="https://github.com/DeboraMSantos/moveit-next/blob/main/public/logo-purple.svg" />
 </p>
 
 <h1 align="center">
