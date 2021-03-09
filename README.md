@@ -18,7 +18,6 @@
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen?color=blue">
 
-<img alt="CI Workflow" src="https://github.com/deboramsantos/moveit/workflows/ci/badge.svg?color=blue">
 </p>
 
 <p align="center">
