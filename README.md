@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-🚧 MoveIt 2.0 | Em Construção 🚧
+🚧 Versão 2.0 | Em Construção 🚧
 </h1>
 
 <p align="center">
@@ -30,10 +30,6 @@
       <img alt="NextJS" src="https://img.shields.io/static/v1?color=white&label=Next&message=JS&?style=plastic&logo=Next.js">
   </a>
 </p>
-
-<h1 align="center">
-  Bem Vindo ao App MoveIt 2.0
-</h1>
 
 <!--
 
