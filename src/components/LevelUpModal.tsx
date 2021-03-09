@@ -45,7 +45,7 @@ export function LevelUpModal() {
             <hr />
             <img className={styles.logo} src="logo-purple.svg" alt="Full logo" />
           </div>
-          <button type="button" onClick={closeLevelUpModal}>
+          <button type="button" onClick={handleCloseLevelUpModal}>
             <img src="/icons/close.svg" alt="Fechar Modal" />
           </button>
         </section>

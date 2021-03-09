@@ -9,8 +9,7 @@ import { ThemeContext } from '../contexts/ThemeContext';
 import styles from '../styles/components/Sidebar.module.css';
 
 export function Sidebar() {
-  const router = useRouter();
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { toggleTheme } = useContext(ThemeContext);
 
   function handleToggleTheme() {
     toggleTheme();
