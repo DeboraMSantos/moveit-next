@@ -18,7 +18,6 @@ const connectToDatabase = async (uri: string) => {
 };
 
 export default async function (request: NowRequest, response: NowResponse) {
-  console.log("r:", request.body);
   if (request.method === "POST") {
     try {
       const {

@@ -25,9 +25,7 @@ export default async function (request: NowRequest, response: NowResponse) {
     const { email } = request.query;
     try {
       const db = await connectToDatabase(process.env.MONGODB_URI);
-
       const collection = db.collection("users");
-
       const user = await collection.findOne({ email: email });
       return response.status(200).json({ success: true, user: user || {} });
     } catch (e) {
