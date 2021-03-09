@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-import { GetServerSideProps } from 'next';
-import api from '../services/api';
 import { ChallengesProvider } from '../contexts/ChallengesContext';
 import { CountdownProvider } from '../contexts/CountdownContext';
 import { ThemeProvider } from '../contexts/ThemeContext';
@@ -16,7 +14,7 @@ import { GitHub } from '../components/GitHub';
 import { Footer } from '../components/Footer';
 
 import styles from '../styles/pages/Home.module.css';
-import { session, useSession } from 'next-auth/client';
+import { useSession } from 'next-auth/client';
 import { useRouter } from 'next/router';
 import SEO from '../components/SEO';
 
@@ -29,7 +27,7 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
-  const [session, loading] = useSession();
+  const [session] = useSession();
   const router = useRouter();
 
   return (
@@ -52,7 +50,6 @@ export default function Home(props: HomeProps) {
 
           >
             <div className={styles.container}>
-
               <ThemeProvider>
                 <Sidebar />
               </ThemeProvider>
@@ -61,6 +58,7 @@ export default function Home(props: HomeProps) {
               <CountdownProvider>
                 <section>
                   <div>
+
                     <ProfileProvider
                       avatarUrl={session.user.image}
                       name={session.user.name}
@@ -82,29 +80,4 @@ export default function Home(props: HomeProps) {
       )}
     </>
   );
-}
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-
-  const email = 'debyiinha@gmail.com';
-
-  await api.get(`/api/user/${email}`)
-    .then((response) => {
-      console.log("response?.data?.user", Date.now());
-      return {
-        props: {
-          user: response?.data?.user ? response.data.user : null
-        },
-      };
-    })
-    .catch((e) => {
-      console.log('Erro ao buscar dados do user', e)
-    })
-
-  return {
-    props: {
-      user: null
-    }
-  }
-
 }

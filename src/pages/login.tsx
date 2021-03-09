@@ -5,11 +5,18 @@ import { useRouter } from "next/router";
 import SEO from "../components/SEO";
 
 export default function Login() {
-  const [session] = useSession();
+  const [session, loading] = useSession();
   const router = useRouter();
 
+
   return (
-    <>
+    <>  {session &&
+      useEffect(() => {
+
+        if (session) {
+          router.push("/");
+        }
+      }, [])}
       {!session && (
         <>
           <SEO title="Login" />
@@ -27,12 +34,7 @@ export default function Login() {
           </div>
         </>
       )}
-      {session &&
-        useEffect(() => {
-          if (session) {
-            router.push("/");
-          }
-        }, [])}
+
     </>
   );
 }
