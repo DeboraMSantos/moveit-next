@@ -1,23 +1,24 @@
 import React, { useEffect } from "react";
-import SEO from "../components/SEO";
-import api from '../services/api'
-import styles from "../styles/pages/Leaderboard.module.css";
-import { Footer } from "../components/Footer";
-import { GitHub } from "../components/GitHub";
 import { LeaderboardCard, UserProps } from "../components/LeaderboardCard";
 import { Sidebar } from "../components/Sidebar";
 import { ThemeProvider } from "../contexts/ThemeContext";
-import { GetServerSideProps } from "next";
-import { useRouter } from "next/router";
+import styles from "../styles/pages/Leaderboard.module.css";
 import { useSession } from "next-auth/client";
+import { GitHub } from "../components/GitHub";
+import { useRouter } from "next/router";
+import { GetServerSideProps } from "next";
+import { Footer } from "../components/Footer";
+import SEO from "../components/SEO";
+import api from '../services/api'
 
 interface LeaderboardProps {
   user: UserProps[]
+
 }
 
 export default function Leaderboard(props: LeaderboardProps) {
 
-  const [session] = useSession();
+  const [session, loading] = useSession();
   const router = useRouter();
   return (
     <>
