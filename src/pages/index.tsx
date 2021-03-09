@@ -84,16 +84,27 @@ export default function Home(props: HomeProps) {
   );
 }
 
-//export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
-  // console.log("ctex", ctx);
-  // const email = 'debyiinha@gmail.com';
-  // const { data } = await api.get(`/api/user/${email}`);
+  const email = 'debyiinha@gmail.com';
 
+  await api.get(`/api/user/${email}`)
+    .then((response) => {
+      console.log("response?.data?.user", Date.now());
+      return {
+        props: {
+          user: response?.data?.user ? response.data.user : null
+        },
+      };
+    })
+    .catch((e) => {
+      console.log('Erro ao buscar dados do user', e)
+    })
 
-  // return {
-  //   props: {
-  //     user: data.users ? data.users : null
-  //   },
-  // };
-//}
+  return {
+    props: {
+      user: null
+    }
+  }
+
+}

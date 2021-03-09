@@ -38,6 +38,15 @@
   font-weight: 600;
   cursor: pointer;
 }
+.flagSidebar {
+  background-color: var(--green);
+  height: 110px;
+  width: 8px;
+  left: 0;
+  position: absolute;
+  border-radius: 0 10px 10px 0;
+  z-index: 10;
+}
 .container div svg:hover,
 .container div svg:first-child {
   color: #fff;
@@ -73,6 +82,16 @@
     font-weight: 600;
     cursor: pointer;
     display: none;
+  }
+  .flagSidebar {
+    background-color: var(--green);
+    left: unset;
+    height: 7px;
+    width: 70px;
+    bottom: 0;
+    position: absolute;
+    border-radius: 10px 10px 0 0;
+    z-index: 10;
   }
 }
 

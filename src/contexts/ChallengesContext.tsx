@@ -1,5 +1,4 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
-// import Cookies from 'js-cookie';
 import challenges from '../../challenges.json';
 import { LevelUpModal } from '../components/LevelUpModal';
 import { ProfileContext } from './ProfileContext';
@@ -15,7 +14,6 @@ interface Challenge {
 
 interface ChallengesProviderProps {
   level: number;
-
   currentExperience: number;
   challengesCompleted: number;
   children: ReactNode;
@@ -47,11 +45,8 @@ export function ChallengesProvider({
   const [currentExperience, setCurrentExperience] = useState(rest.currentExperience ?? 0);
   const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0);
   const [activeChallenge, setActiveChallenge] = useState(null);
-
   const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
-
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
-
   const [loading, setLoading] = useState(true)
 
 
@@ -60,20 +55,8 @@ export function ChallengesProvider({
 
   }, []);
 
-
-  // useEffect(() => {
-
-  //   api.post(`/api/user`, {
-  //     level: level || 1,
-  //     email: session.user.email,
-  //     totalExperience: currentExperience,
-  //     challengesCompleted: challengesCompleted,
-  //     photo: session.user.image,
-  //     name: session.user.name
-  //   })
-
-  // }, [level, currentExperience, challengesCompleted,])
   useEffect(() => {
+    console.log("executoue", Date.now())
     if (loading) {
       api
         .get(`/api/user/${session.user.email}`)

@@ -44,7 +44,7 @@ export default function Leaderboard(props: LeaderboardProps) {
             </div>
             <div>
               {props?.user?.map((user, i) => (
-                <LeaderboardCard position={i} user={user} />
+                <LeaderboardCard key={i} position={i} user={user} />
               ))}
             </div>
             <br />
@@ -60,7 +60,6 @@ export default function Leaderboard(props: LeaderboardProps) {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const { data } = await api.get('/api/user');
-
   return {
     props: {
       user: data.users ? data.users : null
