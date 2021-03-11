@@ -43,7 +43,7 @@ export function ChallengesProvider({
   const [activeChallenge, setActiveChallenge] = useState(null);
   const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
-
+  const [loading, setLoading] = useState(true);
   function LoadDataUser() {
     api
       .get(`/api/user/${email}`)
@@ -51,6 +51,7 @@ export function ChallengesProvider({
         setLevel(response.data.user.level || 1)
         setChallengesCompleted(response.data.user.challengesCompleted || 0)
         setCurrentExperience(response.data.user.totalExperience || 0)
+        setLoading(false)
       })
       .catch((e) => {
         console.log('Erro ao buscar dados do user', e)
@@ -58,19 +59,21 @@ export function ChallengesProvider({
   }
 
   useEffect(() => {
-    LoadDataUser();
     Notification.requestPermission();
+    LoadDataUser();
   }, []);
 
   useEffect(() => {
-    axios.post(`/api/user`, {
-      level: level || 1,
-      totalExperience: currentExperience,
-      email: email,
-      challengesCompleted,
-      photo: avatarUrl,
-      name: name
-    })
+    if (!loading) {
+      axios.post(`/api/user`, {
+        level: level || 1,
+        totalExperience: currentExperience,
+        email: email,
+        challengesCompleted,
+        photo: avatarUrl,
+        name: name
+      })
+    }
   }, [level, currentExperience, challengesCompleted])
 
   function levelUp() {
