@@ -9,6 +9,7 @@ export default function SEO({ title }: SEOProps) {
   return (
     <Head>
       <title>{`${title} | Move.it`}</title>
+
       <link rel="shortcut icon" href="/favicon.png" />
       <meta name="keywords" content="dmssoftwares,demoramsantos,exercicios, pomodoro, move, mover" />
       <meta name="description" content="um aplicativo para você não ser sedentário e fazer você se mover" />
@@ -29,7 +30,6 @@ export default function SEO({ title }: SEOProps) {
       <meta name="twitter:title" content="Move it" />
       <meta name="twitter:description" content="um aplicativo para você não ser sedentário e fazer você se mover" />
       <meta name="twitter:create" content="dmssoftwares" />
-      <meta name="viewport" content="minimum-scale=1, initial-scale=1,width=device-width " />
     </Head>
   )
 }

@@ -27,9 +27,8 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
-  const [session] = useSession();
+  const [session, loading] = useSession();
   const router = useRouter();
-
   return (
     <>
       {!session &&
@@ -37,47 +36,46 @@ export default function Home(props: HomeProps) {
           if (!session) {
             router.push("/login");
           }
-        }, [])}
-      {session && (
-        <>
+        }, [])
+      }
+      {
+        session && (
+          <>
 
-          <SEO title="Início" />
+            <SEO title="Início" />
+            <ProfileProvider
+              avatarUrl={session.user.image}
+              name={session.user.name}
+              email={session.user.email}
+            >
+              <ChallengesProvider>
+                <div className={styles.container}>
+                  <ThemeProvider>
+                    <Sidebar />
+                  </ThemeProvider>
+                  <GitHub />
+                  <ExperienceBar />
+                  <CountdownProvider>
+                    <section>
+                      <div>
+                        <Profile />
+                        <CompletedChallenges />
+                        <Countdown />
+                      </div>
+                      <div>
+                        <ChallengeBox />
+                      </div>
+                    </section>
 
-          <ChallengesProvider
-            level={props.level}
-            currentExperience={props.currentExperience}
-            challengesCompleted={props.challengesCompleted}
-
-          >
-            <div className={styles.container}>
-              <ThemeProvider>
-                <Sidebar />
-              </ThemeProvider>
-              <GitHub />
-              <ExperienceBar />
-              <CountdownProvider>
-                <section>
-                  <div>
-
-                    <ProfileProvider
-                      avatarUrl={session.user.image}
-                      name={session.user.name}
-                      email={session.user.email}
-                    >
-                      <Profile />
-                    </ProfileProvider>
-                    <CompletedChallenges />
-                    <Countdown />
-                  </div>
-                  <div><ChallengeBox /></div>
-                </section>
-
-                <Footer />
-              </CountdownProvider>
-            </div>
-          </ChallengesProvider>
-        </>
-      )}
+                    <Footer />
+                  </CountdownProvider>
+                </div>
+              </ChallengesProvider>
+            </ProfileProvider>
+          </>
+        )
+      }
     </>
   );
 }
+
