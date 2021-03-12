@@ -48,8 +48,8 @@ export function ChallengesProvider({
     api
       .get(`/api/user/${email}`)
       .then((response) => {
-        setLevel(response.data.user.level || 1)
         setChallengesCompleted(response.data.user.challengesCompleted || 0)
+        setLevel(response.data.user.level || 1)
         setCurrentExperience(response.data.user.totalExperience || 0)
         setLoading(false)
       })
@@ -76,7 +76,7 @@ export function ChallengesProvider({
         name: name
       })
     }
-  }, [level, currentExperience, challengesCompleted])
+  }, [challengesCompleted])
 
   function levelUp() {
     setLevel(level + 1);
