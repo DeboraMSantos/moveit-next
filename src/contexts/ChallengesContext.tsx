@@ -60,7 +60,9 @@ export function ChallengesProvider({
 
   useEffect(() => {
     Notification.requestPermission();
-    LoadDataUser();
+    if (loading) {
+      LoadDataUser();
+    }
   }, []);
 
   useEffect(() => {
@@ -91,12 +93,12 @@ export function ChallengesProvider({
 
     setActiveChallenge(challenge);
 
-    if (Notification.permission === 'granted') {
-      new Audio('/notification.mp3').play();
-      // new Notification('Novo Desafio 🎉', {
-      //   body: `Valendo ${challenge.amount}xp!`
-      // })
-    }
+    // if (Notification.permission === 'granted') {
+    //   new Audio('/notification.mp3').play();
+    //   new Notification('Novo Desafio 🎉', {
+    //     body: `Valendo ${challenge.amount}xp!`
+    //   })
+    // }
   }
 
   function resetChallenge() {
