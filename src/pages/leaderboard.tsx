@@ -63,6 +63,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const { data } = await api.get('/api/user');
   return {
     props: {
+      revalidate: 60,
       user: data.users ? data.users : null
     },
   };
