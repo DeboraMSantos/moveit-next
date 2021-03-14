@@ -49,9 +49,8 @@ export function ChallengesProvider({
   const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
   const [loading, setLoading] = useState(true);
-  console.log("level: " + level)
+
   function LoadDataUser() {
-    console.log("email", email)
     api
       .get(`/api/user/${email}`)
       .then((response) => {
@@ -66,13 +65,11 @@ export function ChallengesProvider({
   }
 
   useEffect(() => {
-    console.log("loading:", loading)
     Notification.requestPermission();
     LoadDataUser();
   }, []);
 
   useEffect(() => {
-    console.log("loading:", loading)
     if (!loading) {
       axios.post(`/api/user`, {
         level: level || 1,
