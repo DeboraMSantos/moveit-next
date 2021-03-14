@@ -15,6 +15,7 @@ export function Sidebar() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   console.log("theme:", theme);
   function handleToggleTheme() {
+    console.log("theme:", theme);
     toggleTheme();
   }
   return (
