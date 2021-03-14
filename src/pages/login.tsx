@@ -3,6 +3,7 @@ import { signIn, useSession } from "next-auth/client";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import SEO from "../components/SEO";
+import Cookies from "js-cookie";
 
 export default function Login() {
   const [session, loading] = useSession();
@@ -14,6 +15,7 @@ export default function Login() {
       useEffect(() => {
 
         if (session) {
+          Cookies.set('email', session.user.email);
           router.push("/");
         }
       }, [])}

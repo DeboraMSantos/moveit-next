@@ -13,11 +13,14 @@ interface Challenge {
 }
 
 interface ChallengesProviderProps {
+  level: number;
+
+  currentExperience: number;
+  challengesCompleted: number;
   children: ReactNode;
 }
 
 interface ChallengesProviderData {
-  email: string;
   level: number;
   currentExperience: number;
   challengesCompleted: number;
@@ -34,17 +37,21 @@ interface ChallengesProviderData {
 export const ChallengesContext = createContext({} as ChallengesProviderData);
 
 export function ChallengesProvider({
-  children
+  children,
+  ...rest
 }: ChallengesProviderProps) {
   const { email, name, avatarUrl } = useContext(ProfileContext);
-  const [level, setLevel] = useState(1);
-  const [currentExperience, setCurrentExperience] = useState(0);
-  const [challengesCompleted, setChallengesCompleted] = useState(0);
+  const [level, setLevel] = useState(rest.level ?? 1);
+  const [currentExperience, setCurrentExperience] = useState(rest.currentExperience ?? 0);
+  const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0);
+
   const [activeChallenge, setActiveChallenge] = useState(null);
   const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
   const [loading, setLoading] = useState(true);
+  console.log("level: " + level)
   function LoadDataUser() {
+    console.log("email", email)
     api
       .get(`/api/user/${email}`)
       .then((response) => {
@@ -59,13 +66,13 @@ export function ChallengesProvider({
   }
 
   useEffect(() => {
+    console.log("loading:", loading)
     Notification.requestPermission();
-    if (loading) {
-      LoadDataUser();
-    }
+    LoadDataUser();
   }, []);
 
   useEffect(() => {
+    console.log("loading:", loading)
     if (!loading) {
       axios.post(`/api/user`, {
         level: level || 1,
@@ -76,7 +83,7 @@ export function ChallengesProvider({
         name: name
       })
     }
-  }, [challengesCompleted])
+  }, [level, currentExperience, challengesCompleted]);
 
   function levelUp() {
     setLevel(level + 1);
@@ -130,7 +137,6 @@ export function ChallengesProvider({
   return (
     <ChallengesContext.Provider
       value={{
-        email: email,
         level,
         currentExperience,
         challengesCompleted,

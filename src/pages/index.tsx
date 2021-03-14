@@ -17,10 +17,12 @@ import styles from '../styles/pages/Home.module.css';
 import { useSession } from 'next-auth/client';
 import { useRouter } from 'next/router';
 import SEO from '../components/SEO';
+import { GetServerSideProps } from 'next';
+import api from '../services/api';
+import Cookies from 'js-cookie';
 
 
 interface HomeProps {
-  email: string;
   level: number;
   currentExperience: number;
   challengesCompleted: number;
@@ -48,7 +50,12 @@ export default function Home(props: HomeProps) {
               name={session.user.name}
               email={session.user.email}
             >
-              <ChallengesProvider>
+              <ChallengesProvider
+                level={props.level}
+                currentExperience={props.currentExperience}
+                challengesCompleted={props.challengesCompleted}
+
+              >
                 <div className={styles.container}>
                   <ThemeProvider>
                     <Sidebar />
@@ -79,3 +86,20 @@ export default function Home(props: HomeProps) {
   );
 }
 
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { email } = ctx.req.cookies;
+
+  if (email == null) {
+    return {
+      props: { user: null }
+    }
+  }
+
+  const { data } = await api.get(`/api/user/${email}`);
+  return {
+    props: {
+      revalidate: 60,
+      user: data.users ? data.users : null
+    },
+  };
+};
