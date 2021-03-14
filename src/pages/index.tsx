@@ -20,6 +20,7 @@ import SEO from '../components/SEO';
 import { GetServerSideProps } from 'next';
 import Cookies from 'js-cookie';
 import axios from 'axios';
+import api from '../services/api';
 
 
 interface HomeProps {
@@ -95,7 +96,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     }
   }
 
-  const { data } = await axios.get(`/api/user/${email}`);
+  const { data } = await api.get(`/api/user/${email}`);
   return {
     props: {
       revalidate: 60,
