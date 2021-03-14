@@ -18,8 +18,8 @@ import { useSession } from 'next-auth/client';
 import { useRouter } from 'next/router';
 import SEO from '../components/SEO';
 import { GetServerSideProps } from 'next';
-import api from '../services/api';
 import Cookies from 'js-cookie';
+import axios from 'axios';
 
 
 interface HomeProps {
@@ -95,7 +95,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     }
   }
 
-  const { data } = await api.get(`/api/user/${email}`);
+  const { data } = await axios.get(`/api/user/${email}`);
   return {
     props: {
       revalidate: 60,
