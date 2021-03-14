@@ -13,9 +13,7 @@ import styles from '../styles/components/Sidebar.module.css';
 export function Sidebar() {
   const router = useRouter();
   const { theme, toggleTheme } = useContext(ThemeContext);
-  console.log("theme:", theme);
   function handleToggleTheme() {
-    console.log("theme:", theme);
     toggleTheme();
   }
   return (
