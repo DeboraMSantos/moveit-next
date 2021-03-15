@@ -2,17 +2,23 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { signOut } from "next-auth/client";
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 import { RiLightbulbFlashLine, RiLightbulbLine, RiLogoutBoxLine, RiTrophyLine } from 'react-icons/ri';
 
 import { ThemeContext } from '../contexts/ThemeContext';
 import styles from '../styles/components/Sidebar.module.css';
+import Cookies from 'js-cookie';
 
 export function Sidebar() {
   const router = useRouter();
   const { theme, toggleTheme } = useContext(ThemeContext);
+
+  useEffect(() => {
+    Cookies.set('theme', theme);
+  }, [theme]);
+
   function handleToggleTheme() {
     toggleTheme();
   }
