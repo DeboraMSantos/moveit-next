@@ -39,7 +39,7 @@ Versão 2.0
 
 ## 🏃 Sobre o Move.It
 
-O MoveIt é uma aplicação inspitada no método pomodoro 🍅, porém, foi adicionado uma gamificação para ficar bem mais divertido e intuitivo.
+O Move.It é uma aplicação inspirada no método pomodoro 🍅, porém, foi adicionado uma gamificação para ficar bem mais divertido e intuitivo.
 
 O método faz com que você se dedique 25 minutos em apenas uma tarefa, e após este periodo, ocorre uma pausa para efetuar um pequeno exercício.
 
