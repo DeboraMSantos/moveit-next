@@ -41,6 +41,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       document.documentElement.style.setProperty('--blue', '#5965e0');
       document.documentElement.style.setProperty('--blue-dark', '#5931A9');
       document.documentElement.style.setProperty('--blue-twitter', '#2AA9E0');
+      document.documentElement.style.setProperty('--markup', '#020202');
       setTheme('dark');
     }
     else {
@@ -55,6 +56,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       document.documentElement.style.setProperty('--blue', '#5965e0');
       document.documentElement.style.setProperty('--blue-dark', '#4953b8');
       document.documentElement.style.setProperty('--blue-twitter', '#2aa9e0');
+      document.documentElement.style.setProperty('--markup', '#ddd');
       setTheme('light');
     }
   }

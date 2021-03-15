@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import styles from '../styles/components/LeaderboardCard.module.css';
 
 interface LeaderboardCardProps {
@@ -7,6 +8,7 @@ interface LeaderboardCardProps {
 
 export type UserProps = {
   id: string
+  email: string
   name: string
   level: number
   currentExperience: number
@@ -16,9 +18,10 @@ export type UserProps = {
 }
 
 export const LeaderboardCard = ({ user, position }: LeaderboardCardProps) => {
+  const email = Cookies.get('email');
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${email === user.email ? styles.backgroundGrayLine : ""} `}>
       <p>{position + 1}</p>
       <div className={styles.avatar}>
         <img src={user.photo} />

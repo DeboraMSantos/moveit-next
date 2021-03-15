@@ -2,6 +2,8 @@ import { createContext, ReactNode, useContext, useEffect, useState } from 'react
 import challenges from '../../challenges.json';
 import { LevelUpModal } from '../components/LevelUpModal';
 import { ProfileContext } from './ProfileContext';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 import axios from 'axios';
 import api from '../services/api';
 
@@ -99,6 +101,7 @@ export function ChallengesProvider({
 
     if (Notification.permission === 'granted') {
       new Audio('/notification.mp3').play();
+      NotificationManager.info(`Valendo ${challenge.amount}xp!`, 'Novo Desafio 🎉');
       // new Notification('Novo Desafio 🎉', {
       //   body: `Valendo ${challenge.amount}xp!`
       // })
@@ -107,6 +110,9 @@ export function ChallengesProvider({
 
   function resetChallenge() {
     setActiveChallenge(null);
+    new Audio('/notification.mp3').play();
+    NotificationManager.error(`Tente novamente você consegue. 😄`, 'Você falhou 😢');
+
   }
 
 
@@ -122,6 +128,7 @@ export function ChallengesProvider({
     setCurrentExperience(finalExperience);
     setActiveChallenge(null);
     setChallengesCompleted(challengesCompleted + 1);
+    NotificationManager.success(`Parabéns você completou o desafio, continue assim.`, 'Desafio Completo 🎉');
 
     if (finalExperience >= experienceToNextLevel) {
       finalExperience = finalExperience - experienceToNextLevel;
@@ -146,6 +153,7 @@ export function ChallengesProvider({
         closeLevelUpModal
       }}>
       {children}
+      <NotificationContainer />
       {isLevelUpModalOpen && <LevelUpModal />}
     </ChallengesContext.Provider>
   );

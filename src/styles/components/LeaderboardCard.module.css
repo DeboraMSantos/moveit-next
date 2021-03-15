@@ -11,6 +11,10 @@
   border-radius: 10px;
 }
 
+.backgroundGrayLine{
+  background: var(--markup)
+}
+
 .container p:first-child {
   justify-self: center;
   align-self: center;
