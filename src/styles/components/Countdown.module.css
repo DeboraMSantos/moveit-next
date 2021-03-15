@@ -105,7 +105,7 @@
     font-size: 6.5rem;
   }
   .countdownContainer > div span {
-    max-height: 8.5rem;
+    max-height: 7rem;
     vertical-align: super;
     display: flex;
     align-items: center;

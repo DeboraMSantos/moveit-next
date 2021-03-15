@@ -14,6 +14,7 @@ export function ChallengeBox() {
   useEffect(() => {
     divRef.current?.focus();
   }, [divRef.current, isActive])
+
   function handleChallengeCompleted() {
     completeChallenge();
     resetCountdown();
