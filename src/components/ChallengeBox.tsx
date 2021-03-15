@@ -12,10 +12,8 @@ export function ChallengeBox() {
   const divRef = useRef(null);
 
   useEffect(() => {
-    if (isActive) {
-      divRef.current.focus();
-    }
-  }, [])
+    divRef.current?.focus();
+  }, [divRef.current, isActive])
   function handleChallengeCompleted() {
     completeChallenge();
     resetCountdown();
@@ -31,7 +29,7 @@ export function ChallengeBox() {
       {activeChallenge ? (
         <div
           className={styles.challengeActive}
-          ref={divRef}
+
         >
           <header>Ganhe {activeChallenge.amount} xp</header>
 
@@ -54,6 +52,7 @@ export function ChallengeBox() {
               type="button"
               className={styles.challengeCompletedButton}
               onClick={handleChallengeCompleted}
+              ref={divRef}
             >
               Completei
             </button>
