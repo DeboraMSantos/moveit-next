@@ -101,8 +101,8 @@
   .countdownContainer > div {
     max-width: 40%;
     display: flex;
-    height: 8rem;
-    font-size: 7.5rem;
+    height: 7rem;
+    font-size: 6.5rem;
   }
   .countdownContainer > div span {
     max-height: 8.5rem;
