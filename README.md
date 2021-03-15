@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-🚧 Versão 2.0 | Em Construção 🚧
+Versão 2.0
 </h1>
 
 <p align="center">
@@ -31,32 +31,33 @@
   </a>
 </p>
 
-<!--
+## 🚀 Sobre o Move.It
 
-## :information_source: O que é Next Level Week?
-
-O [NLW](https://nextlevelweek.com/inscricao/1) é uma semana prática com muito código, desafios, network e com um único objetivo: levá-lo ao próximo nível.
-Através do método da [Rocketseat](https://nextlevelweek.com/inscricao/1), você aprenderá novas ferramentas, tecnologias e descobrirá hacks que irão impulsionar sua carreira.
-Um evento online e totalmente gratuito que o ajudará a dar o próximo passo na sua evolução como desenvolvedor.
--->
-
-## 🚀 Sobre o Projeto
-
-MoveIt e uma aplicação para incentivar quem fica horas no computador a se exercitar, usando o método pomodoro, a cada 25 minutos concentrado no trabalho ele terá uma pausa para efetuar um pequeno exercício e com adição da gamificação na aplicação tudo fica mais divertido.
+O MoveIt é uma aplicação inspitada no método pomodoro, porém foi adicionado uma gamificação para ficar bem mais divertido e intuitivo.
+O método faz com que você se dedique 25 minutos em apenas uma tarefa, e após este periodo, ocorre uma pausa para efetuar um pequeno exercício.
+Caso você complete o desafio você ganha experiência para poder evoluir cada desafio.
+Os desafios são randômicos podendo aparecer o mesmo exercício várias vezes, independente do seu nível e experiência.
 
 ## 🎨 Layout
 
-Design feito por [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/)
+Design desenvoldido pelo [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/), eu realizei pequenas modificações para a segunda versão.
 
-## :tada: Melhorias na Aplicação
+## :tada: Melhorias na Aplicação V2.0
 
-    -Adicionado mongodb para salvar informações;
-    -Adicionado pagina de Leaderboard na aplicação;
-    -Adicionado theme dark na aplicação;
-    -Adicionado Ícones para representar os botões;
-    -Adicionado uma SideBar
+    -Adicionado tela de login com autenticação com a Google;
+    -Adicionado MongoDB para salvar informações;
+    -Adicionado página de Ranking na aplicação;
+    -Adicionado tema escuro na aplicação;    
+    -Adicionado ícones para representar os botões;
+    -Adicionado LottieFile para mostrar o tempo passando de uma forma divertida;
+    -Adicionado LottieFiles, som de palmas,  quantidade de desafios e experiência na modal de parabéns que alcançou o próximo nível;
+    -Adicionado uma menu;
     -Adicionado component para SEO;
-    -Efetuado ajustes para mobile;
+    -Adicionado notificações personalizadas;
+    -Adicionado link para o repositório do GitHub;
+    -Efetuado ajustes para ficar responsivo em mobile;
+    -Personalizado a barra de experiência.
+    
 
 ## 🔨 Tecnologias:
 
