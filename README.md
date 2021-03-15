@@ -141,4 +141,4 @@ $ yarn dev ou npm run dev
 
 Este projeto esta sobe a licença MIT. Veja a [LICENÇA](https://opensource.org/licenses/MIT) para saber mais.
 
-Desenvolvido por Débora Moura dos Santos 👋🏽 [Entre em contato!](https://www.linkedin.com/in/d%C3%A9bora-moura-dos-santos-57813335/)
+ Desenvolvido por Débora Moura dos Santos  💻🙋‍♀️  [Entre em contato!](https://www.linkedin.com/in/d%C3%A9bora-moura-dos-santos-57813335/)
