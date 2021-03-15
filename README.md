@@ -96,17 +96,7 @@ $ yarn dev
 
 # O servidor inciará na porta:3000 - acesse http://localhost:3000
 
-
 ```
-
-## 🤔 Como contribuir para o projeto
-
-- Faça um **fork** do projeto;
-- Crie uma nova branch com as suas alterações: `git checkout -b my-feature`
-- Salve as alterações e crie uma mensagem de commit contando o que você fez:`git commit -m "feature: My new feature"`
-- Envie as suas alterações: `git push origin my-feature`
-
-> Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](https://github.com/firstcontributions/first-contributions)
 
 ## 📝 Licença
 
