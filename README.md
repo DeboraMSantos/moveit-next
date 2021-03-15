@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-🚧 Versão 2.0 | Em Construção 🚧
+Versão 2.0
 </h1>
 
 <p align="center">
