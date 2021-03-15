@@ -48,9 +48,9 @@ export function Sidebar() {
 
       <div className={styles.icon} title={theme === "light" ? "Alterar para tema escuro" : "Alterar para tema claro"}>
         <div onClick={handleToggleTheme} >
-          {theme === "light" ? (
-            <RiLightbulbFlashLine />
-          ) : (<RiLightbulbLine />)}
+          {theme === "dark" ? (<RiLightbulbLine />
+
+          ) : (<RiLightbulbFlashLine />)}
           <p>Tema</p>
         </div>
       </div>
