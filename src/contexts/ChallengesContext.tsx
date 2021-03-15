@@ -99,9 +99,9 @@ export function ChallengesProvider({
 
     if (Notification.permission === 'granted') {
       new Audio('/notification.mp3').play();
-      new Notification('Novo Desafio 🎉', {
-        body: `Valendo ${challenge.amount}xp!`
-      })
+      // new Notification('Novo Desafio 🎉', {
+      //   body: `Valendo ${challenge.amount}xp!`
+      // })
     }
   }
 
