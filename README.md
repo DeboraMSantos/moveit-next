@@ -37,12 +37,12 @@ O MoveIt é uma aplicação inspitada no método pomodoro 🍅, porém, foi adic
 
 O método faz com que você se dedique 25 minutos em apenas uma tarefa, e após este periodo, ocorre uma pausa para efetuar um pequeno exercício.
 
-Caso você complete o desafio você ganha experiência para poder evoluir cada desafio.
+Caso você complete o desafio você ganha experiência para poder subir de nível.
 Os desafios são randômicos podendo aparecer o mesmo exercício várias vezes, independente do seu nível e experiência.
 
 ## 🎨 Layout
 
-Design desenvoldido pelo [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/), eu realizei pequenas modificações para a segunda versão.
+Design desenvolvido pelo [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/), eu realizei pequenas modificações para a segunda versão.
 
 ## :tada: Melhorias na Aplicação V2.0
 
@@ -61,19 +61,19 @@ Design desenvoldido pelo [Tiago Luchtenberg](https://www.instagram.com/tiagoluch
     -Personalizado a barra de experiência.
     
 
-## 🔨 Tecnologias:
+## 💻 Tecnologias:
 
 - **[TypeScript](https://www.typescriptlang.org/)**
 - **[NextJS](https://nextjs.org/)**
 - **[Mongodb](https://www.mongodb.com/)**
 - **[Axios](https://github.com/axios/axios)**
 
-## 🔎 Comandos
+## ⌨️ Comandos
 
 - `dev`: Executa a aplicação em `localhost:3000`
 - `build`: Cria a Build do projeto
 
-## 🚀 Como rodar este projeto
+## 🟢 Como rodar este projeto
 
 Para clonar e executar este aplicativo, você precisará de [Git](https://git-scm.com) e [NodeJs](https://nodejs.org/en/) Instalado em seu computador.
 
@@ -84,11 +84,11 @@ Para clonar e executar este aplicativo, você precisará de [Git](https://git-sc
 $ git clone https://github.com/deboramsantos/moveit-next
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd moveit
+$ cd moveit-next
 
 ```
 
-### 🎲 Rodando a Aplicação
+### ▶️ Rodando a Aplicação
 
 ```bash
 # Instale as dependências
