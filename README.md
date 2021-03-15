@@ -56,6 +56,20 @@ Design desenvolvido na NLW4 pelo [Tiago Luchtenberg](https://www.instagram.com/t
 </p>
 
 <p align="center">
+  <img  alt="tela de desafios do ranking" title="MoveIt" src="https://github.com/DeboraMSantos/moveit-next/blob/main/public/5.png" />
+</p>
+
+<p align="center">
+  <img  alt="tela de desafios do ranking" title="MoveIt" src="https://github.com/DeboraMSantos/moveit-next/blob/main/public/6.png" />
+</p>
+
+<p align="center">
+  <img  alt="tela de desafios do ranking" title="MoveIt" src="https://github.com/DeboraMSantos/moveit-next/blob/main/public/7.png" />
+</p>
+
+
+
+<p align="center">
   <img  alt="tela de desafios do ranking" title="MoveIt" src="https://github.com/DeboraMSantos/moveit-next/blob/main/public/4.png" />
 </p>
 
