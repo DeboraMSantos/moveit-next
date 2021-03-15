@@ -94,6 +94,7 @@ Design desenvolvido na NLW4 pelo [Tiago Luchtenberg](https://www.instagram.com/t
     -Adicionado notificações personalizadas;
     -Adicionado link para o repositório do GitHub;
     -Efetuado ajustes para ficar responsivo em mobile;
+    -Na tela do ranking a sua pontuação fica destacada;
     -Personalizado a barra de experiência.
     
 
