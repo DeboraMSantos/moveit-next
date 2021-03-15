@@ -83,16 +83,17 @@ $ git clone https://github.com/deboramsantos/moveit-next
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd moveit
+
 ```
 
 ### 🎲 Rodando a Aplicação
 
 ```bash
 # Instale as dependências
-$ yarn install
+$ yarn install ou npm i
 
 # Execute a Aplicação em Desenvolvimento
-$ yarn dev
+$ yarn dev ou npm run dev
 
 # O servidor inciará na porta:3000 - acesse http://localhost:3000
 
