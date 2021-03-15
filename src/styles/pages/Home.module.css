@@ -19,5 +19,6 @@
 @media (max-width: 1100px) {
   .container section {
     grid-template-columns: 1fr;
+    gap: 0;
   }
 }
