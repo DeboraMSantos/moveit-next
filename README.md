@@ -5,9 +5,12 @@
 <h1 align="center">
 Versão 2.0
 </h1>
-<a href="https://moveit-dms.vercel.app/">
+
+<p align="center">
+  <a href="https://moveit-dms.vercel.app/">
      Clique aqui para acessar o Move.it
   </a>
+</p>
 
 <p align="center">
 
