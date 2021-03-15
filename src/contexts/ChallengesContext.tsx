@@ -102,17 +102,14 @@ export function ChallengesProvider({
     if (Notification.permission === 'granted') {
       new Audio('/notification.mp3').play();
       NotificationManager.info(`Valendo ${challenge.amount}xp!`, 'Novo Desafio 🎉');
-      // new Notification('Novo Desafio 🎉', {
-      //   body: `Valendo ${challenge.amount}xp!`
-      // })
     }
   }
 
   function resetChallenge() {
     setActiveChallenge(null);
-    new Audio('/notification.mp3').play();
-    NotificationManager.error(`Tente novamente você consegue. 😄`, 'Você falhou 😢');
-
+    if (Notification.permission === 'granted') {
+      NotificationManager.error(`Tente novamente você consegue. 😄`, 'Você falhou 😢');
+    }
   }
 
 
@@ -128,8 +125,9 @@ export function ChallengesProvider({
     setCurrentExperience(finalExperience);
     setActiveChallenge(null);
     setChallengesCompleted(challengesCompleted + 1);
-    NotificationManager.success(`Parabéns você completou o desafio, continue assim.`, 'Desafio Completo 🎉');
-
+    if (Notification.permission === 'granted') {
+      NotificationManager.success(`Parabéns você completou o desafio, continue assim.`, 'Desafio Completo 🎉');
+    }
     if (finalExperience >= experienceToNextLevel) {
       finalExperience = finalExperience - experienceToNextLevel;
       levelUp();

@@ -63,7 +63,7 @@ export function Sidebar() {
 
       <div className={`${styles.icon} ${styles.iconGithub}`} title="Código do projeto" >
         <a
-          href="https://github.com/deboraMsantos"
+          href="https://github.com/DeboraMSantos/moveit-next"
           target="_blank"
           rel="noopener noreferrer"
           title="Código do projeto"
