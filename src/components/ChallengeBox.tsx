@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useRef, useEffect } from 'react';
 import { ChallengesContext } from '../contexts/ChallengesContext';
 import { CountdownContext } from '../contexts/CountdownContext';
 import styles from '../styles/components/ChallengeBox.module.css';
@@ -9,7 +9,13 @@ export function ChallengeBox() {
 
   const { activeChallenge, resetChallenge, completeChallenge } = useContext(ChallengesContext);
   const { resetCountdown, isActive, percentTime } = useContext(CountdownContext);
+  const divRef = useRef(null);
 
+  useEffect(() => {
+    if (isActive) {
+      divRef.current.focus();
+    }
+  }, [])
   function handleChallengeCompleted() {
     completeChallenge();
     resetCountdown();
@@ -23,7 +29,10 @@ export function ChallengeBox() {
   return (
     <div className={styles.challengeBoxContainer}>
       {activeChallenge ? (
-        <div className={styles.challengeActive}>
+        <div
+          className={styles.challengeActive}
+          ref={divRef}
+        >
           <header>Ganhe {activeChallenge.amount} xp</header>
 
           <main>
