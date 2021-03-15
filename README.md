@@ -42,9 +42,25 @@ Os desafios são randômicos podendo aparecer o mesmo exercício várias vezes, 
 
 ## 🎨 Layout
 
-Design desenvolvido pelo [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/), eu realizei pequenas modificações para a segunda versão.
+Design desenvolvido na NLW4 pelo [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/), eu realizei pequenas modificações para a segunda versão.
 
-## :tada: Melhorias na Aplicação V2.0
+<p align="center">
+  <img  alt="tela de login do move.it" title="MoveIt" src="https://github.com/DeboraMSantos/moveit-next/blob/main/public/1.png" />
+</p>
+<p align="center">
+  <img  alt="tela de desafios do move.it" title="MoveIt" src="https://github.com/DeboraMSantos/moveit-next/blob/main/public/2.png" />
+</p>
+
+<p align="center">
+  <img  alt="tela de desafios do move.it" title="MoveIt" src="https://github.com/DeboraMSantos/moveit-next/blob/main/public/3.png" />
+</p>
+
+<p align="center">
+  <img  alt="tela de desafios do ranking" title="MoveIt" src="https://github.com/DeboraMSantos/moveit-next/blob/main/public/4.png" />
+</p>
+
+
+## 💡 Melhorias na Aplicação V2.0
 
     -Adicionado tela de login com autenticação com a Google;
     -Adicionado MongoDB para salvar informações;
