@@ -7,7 +7,7 @@ Versão 2.0
 </h1>
 
 <p align="center">
-  <a href="https://debby-happy.vercel.app/">
+  <a href="https://moveit-dms.vercel.app/">
      Clique aqui para acessar o Move.it
   </a>
 </p>
